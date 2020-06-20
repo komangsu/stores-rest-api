@@ -7,7 +7,7 @@ class Store(Resource):
     def get(self, name):
         store = StoreModel.find_by_name(name)
         if store:
-            store.json()
+            return store.json()
         return {'message': 'Store not found'}, 400
 
     def post(self, name):
